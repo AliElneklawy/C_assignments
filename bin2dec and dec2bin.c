@@ -3,6 +3,10 @@
 #define IntMax 2147483647
 #define maxBin 30
 
+/* decimal to binary conversion and vice versa using linked lists */
+
+
+
 struct node
 {
     int x;
@@ -22,22 +26,22 @@ int main()
     int n, ch;
     printf("Choose an option:\n 1- Decimal to binary\n 2- Binary to decimal\n  YOUR CHOICE: ");
     scanf("%d", &ch);
-    if(ch == 1){
+    if(ch == 1){    //decimal to binary
         system("cls");
         printf("Enter a decimal number: ");
         scanf("%d", &n);
-        if (n==0){
+        if (n==0){      //if the user enters 0, the output is just 0
             printf("\nThe binary equivalent is: 0\n");
             exit(1);
         }
         dec2bin(n);
         printf("\n");
     }
-    else{
+    else{   //binary to decimal
         system("cls");
         printf("Enter a binary number: ");
         scanf("%d", &n);
-        saveBinInLs(n);
+        saveBinInLs(n);     //save the binary bits each in a node
     }
 
     return 0;
@@ -50,7 +54,7 @@ void dec2bin(int n)
     while(n != 0){
         rem = n%2;
         if(i == 0){
-           head = create_ls(&rem);
+           head = create_ls(&rem);  //create the first node in the list
            trav = head;
            i = 1;
         }
@@ -59,7 +63,7 @@ void dec2bin(int n)
         }
         n = n/2;
     }
-    head = reverse(head);
+    head = reverse(head);     //reverse the bits in the linked list
     print(head);
 }
 
