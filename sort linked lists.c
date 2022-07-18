@@ -28,17 +28,7 @@ int main()
     }
     ls *trav = head;
     trav = findMax(trav);
-    //head = reverse(head);
     print(head);
-    /*x = check_sort(head);
-
-    if(x == 0){
-        printf("\nNot sorted.");
-    }else if(x == 1){
-        printf("\nSorted in ascending order.");
-    }else{
-        printf("\nSorted in ascending order.");
-    }*/
     return 0;
 }
 
@@ -77,47 +67,11 @@ ls *add_end(ls *head, int *n, int *i)
     return head;
 }
 
-/*int check_sort(ls *head)
-{
-    ls *trav = head;
-    while(trav -> link != NULL)
-    {
-        if(trav -> x > trav -> link -> x){
-            return 0;
-        }
-        trav = trav -> link;
-    }
-    return 1;
-}*/
-
-/*ls *reverse(ls *head)
-{
-    ls *prev = head, *next = head -> link;
-
-    short i = 1;
-    while(1){
-        if(next == NULL){
-            prev = NULL;
-            break;
-        }
-        if(i == 1){
-            prev -> link = NULL;
-            i = 0;
-        }
-        head = next;
-        next = next -> link;
-        head -> link = prev;
-        prev = head;
-    }
-    return head;
-
-}*/
-
 ls *findMax(ls *save)
 {
     ls *kp = NULL, *trav = save;
     if(trav == NULL)    return;
-    int INT_MAX, max = -1*IntMax;   //if any item in the list equals max, the function does not work
+    int max = -1*IntMax;   //if any item in the list equals max, the function does not work
     while(trav != NULL){
         if(trav -> x > max){
             max = trav -> x;
@@ -137,19 +91,4 @@ ls *sort(ls *save, ls *kp, int *max)
     save = save -> link;
     findMax(save);
 }
-
-/*int SaveInArr(ls *head, int *n)
-{
-    int arr[*n], i = 0;
-    ls *trav = head;
-    while(trav != NULL){
-        arr[i++] = trav -> x;
-        trav = trav -> link;
-    }
-
-    for(i = 0; i < *n; i++){
-        printf("%d ", arr[i]);
-    }
-    return arr;
-}*/
 
