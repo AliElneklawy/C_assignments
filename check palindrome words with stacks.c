@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**         Linked list implementation of stacks        **/
-/* Linked lists, unlike arrays, enable us to add as much info as we want to the stack   */
+/**         check palindrome words with stacks        **/
 
 int i = 0;
 
