@@ -64,7 +64,10 @@ void check_bal()
     if(isEmpty(head)){
         printf("Brackets are balanced.");
     }
-    else printf("Invalid expression.");
+    else{
+        printf("Invalid expression.");
+        free(head); head = NULL;
+    }
 }
 
 ls *add_end(int data, ls* head)
